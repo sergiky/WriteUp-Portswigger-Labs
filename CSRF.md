@@ -1,5 +1,4 @@
 - [What is CSRF or XSRF?](#what-is-csrf-or-xsrf)
-- [Validations To-Do](#validations-to-do)
 - [CSRF vulnerability with no defenses](#csrf-vulnerability-with-no-defenses)
 - [CSRF where token validation depends on request method](#csrf-where-token-validation-depends-on-request-method)
 - [CSRF where token validation depends on token being present](#csrf-where-token-validation-depends-on-token-being-present)
@@ -18,11 +17,6 @@
 
 CSRF or Cross Site Request Forguery. When the user logs in can do things like change the email, the profile image... Account session remains open for a while, then, the evil actor can create a malicious website and automate some of this action, change the email, profile image...
 
-# Validations To-Do
-
-- Change request method and remove CSRF token.
-- Remove the CSRF token with the same method.
-- With two users try to use the csrf token of one in the other account and see if we can change the email.
 # CSRF vulnerability with no defenses
 
 This is a very simple case, if you try to intercept the request when change the email you see a new endpoint, **my-account/change-email** that doesn't have csrf_token and nothing, only the email and the cookie session. 
